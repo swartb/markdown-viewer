@@ -24,6 +24,30 @@ vierkante selecties met een accentrand. Alles volgt het actieve Omarchy-thema.
 
 Geen browser, geen server, geen dependencies buiten Qt.
 
+## Vibe-coded
+
+Dit is een vibe-coded applicatie: het idee, de eisen en het ontwerp zijn van
+Bart, de code is grotendeels geschreven door een AI-coding agent (Pi) in
+pairing-sessies. Elke stap is wel gebouwd, getest (`bin/test`, offscreen
+screenshots) en met de hand nagelopen, maar het blijft een hobbyproject zonder
+enige garantie. Gebruik het, kopieer het, verbeter het.
+
+## Bronnen en licenties
+
+De app is geïnspireerd op bestaande projecten en gebruikt daar onderdelen van:
+
+| Bron | Gebruikt voor | Licentie |
+|------|----------------|----------|
+| [Flea](https://github.com/thisisgm/flea) | ontwerp: maten (23/25/32 px), kleurrollen, vierkante selecties, Lucide-iconen | MIT |
+| [Lucide](https://lucide.dev) (via Flea's `Icons.js`) | de lijniconen (SVG-paddata) | ISC |
+| [Omarchy](https://github.com/omacom/omarchy) | `colors.toml`, `shell.toml` en `Style.qml`: thema en tekstschaal, tijdens runtime gelezen | MIT |
+| [Qt 6](https://www.qt.io) (Widgets, Svg) | het framework, dynamisch gelinkt | LGPL-3.0 / GPL-3.0 |
+| [JetBrains Mono Nerd Font](https://www.jetbrains.com/lp/mono/) | de monospace UI, als die op het systeem staat | OFL-1.1 |
+
+Flea en Omarchy zijn niet meegebundeld: de app leest alleen het actieve
+Omarchy-thema en gebruikt dezelfde ontwerpmaten. De volledige licentieteksten
+van het overgenomen materiaal staan in [THIRD_PARTY.md](THIRD_PARTY.md).
+
 ## Installeren
 
 ```bash
