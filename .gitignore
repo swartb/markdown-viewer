@@ -1,0 +1,10 @@
+build/
+build-tests/
+*.o
+Makefile
+.qmake.stash
+.moc/
+.obj/
+.rcc/
+build-shots/
+.pi/

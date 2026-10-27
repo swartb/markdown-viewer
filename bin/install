@@ -1,0 +1,18 @@
+#!/bin/sh
+# Installeert de app in ~/.local (geen sudo nodig).
+set -eu
+root=$(cd "$(dirname "$0")/.." && pwd)
+"$root/bin/build"
+
+bindir="$HOME/.local/bin"
+appdir="$HOME/.local/share/applications"
+icondir="$HOME/.local/share/icons/hicolor/scalable/apps"
+
+install -Dm755 "$root/build/markdown-viewer" "$bindir/markdown-viewer"
+install -d "$appdir"
+sed "s|^Exec=markdown-viewer|Exec=$bindir/markdown-viewer|" \
+    "$root/pkgbuild/markdown-viewer.desktop" > "$appdir/markdown-viewer.desktop"
+install -Dm644 "$root/src/markdown-viewer.svg" "$icondir/markdown-viewer.svg"
+
+update-desktop-database "$appdir" 2>/dev/null || true
+echo "Geïnstalleerd. Start via de app-launcher of: markdown-viewer [map of bestand]"

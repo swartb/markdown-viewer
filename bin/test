@@ -1,0 +1,9 @@
+#!/bin/sh
+# Bouwt en draait de tests zonder scherm.
+set -eu
+root=$(cd "$(dirname "$0")/.." && pwd)
+mkdir -p "$root/build-tests"
+cd "$root/build-tests"
+qmake6 "$root/tests/tests.pro" >/dev/null
+make -j"$(nproc)" >/dev/null
+QT_QPA_PLATFORM=offscreen ./tests

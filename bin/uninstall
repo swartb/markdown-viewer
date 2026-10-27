@@ -1,0 +1,8 @@
+#!/bin/sh
+# Verwijdert de installatie uit ~/.local; instellingen blijven bewaard.
+set -eu
+rm -f "$HOME/.local/bin/markdown-viewer"
+rm -f "$HOME/.local/share/applications/markdown-viewer.desktop"
+rm -f "$HOME/.local/share/icons/hicolor/scalable/apps/markdown-viewer.svg"
+update-desktop-database "$HOME/.local/share/applications" 2>/dev/null || true
+echo "Verwijderd. Instellingen staan nog in ~/.config/bart/markdown-viewer.conf"

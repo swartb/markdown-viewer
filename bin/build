@@ -1,0 +1,9 @@
+#!/bin/sh
+# Bouwt de app naar build/markdown-viewer.
+set -eu
+root=$(cd "$(dirname "$0")/.." && pwd)
+mkdir -p "$root/build"
+cd "$root/build"
+qmake6 "$root/markdown-viewer.pro"
+make -j"$(nproc)"
+echo "Gebouwd: $root/build/markdown-viewer"

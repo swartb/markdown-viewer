@@ -1,0 +1,9 @@
+QT += widgets svg
+CONFIG += c++17 console
+TEMPLATE = app
+TARGET = screenshot
+INCLUDEPATH += ../src
+SOURCES += screenshot.cpp ../src/mainwindow.cpp ../src/theme.cpp
+HEADERS += ../src/mainwindow.h ../src/theme.h
+OBJECTS_DIR = .obj
+MOC_DIR = .moc

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Maakt docs/screenshot.png zonder de desktop te storen.
+set -eu
+root=$(cd "$(dirname "$0")/.." && pwd)
+mkdir -p "$root/build-shots"
+cd "$root/build-shots"
+qmake6 "$root/tests/harness.pro" >/dev/null
+make -j"$(nproc)" >/dev/null
+QT_QPA_PLATFORM=offscreen ./screenshot "${1:-$root/examples/welkom.md}" "${2:-$root/docs/screenshot.png}"
+echo "Schermafbeelding: ${2:-$root/docs/screenshot.png}"

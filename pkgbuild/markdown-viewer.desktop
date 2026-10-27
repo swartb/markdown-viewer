@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Markdown viewer
+Name[en]=Markdown viewer
+Comment=Lees markdown-bestanden uit een map
+Comment[en]=Read markdown files from a directory
+Exec=markdown-viewer %f
+Icon=markdown-viewer
+Terminal=false
+Categories=Utility;TextTools;
+MimeType=text/markdown;
+Keywords=markdown;viewer;notes;notities;
+StartupWMClass=markdown-viewer
